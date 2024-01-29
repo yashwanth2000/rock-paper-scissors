@@ -1,27 +1,27 @@
 body {
-    margin: 0;
-    background-color: #76c400;
-    font-family: Roboto, sans-serif;
-    box-sizing: border-box;
+  margin: 0;
+  background-color: #76c400;
+  font-family: Roboto, sans-serif;
+  box-sizing: border-box;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-p{
+p {
   margin: 0;
   padding: 0;
 }
 
 /* header */
 
-header{
+header {
   max-width: 840px;
   margin: 0 auto;
 }
 
-.game-header{
+.game-header {
   color: #fff;
   display: flex;
   align-items: center;
@@ -33,21 +33,21 @@ header{
   padding: 14px;
 }
 
-.title{
+.title {
   font-size: 40px;
   font-weight: 600;
   letter-spacing: 3px;
   padding-top: 14px;
 }
 
-.score{
+.score {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
 }
 
-.score-card{
+.score-card {
   background-color: #fff;
   border-radius: 10px;
   text-align: center;
@@ -56,20 +56,63 @@ header{
   height: 110px;
 }
 
-.score-card p:first-child{
+.score-card p:first-child {
   color: #656565;
   font-size: 17px;
   font-weight: 700;
   letter-spacing: 2px;
 }
 
-.score-card p:last-child{
+.score-card p:last-child {
   color: #252525;
   font-size: 68px;
   font-weight: 700;
   text-align: center;
 }
 
+/* Main Section */
+
+.main {
+  position: relative;
+  height: 420px;
+}
+
+.main-container {
+  max-width: 840px;
+}
+
+.choice_screen {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.select-option {
+  background-color: white;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.line {
+  width: 200px;
+  height: 20px;
+  background-color: #344007;
+}
+
+.rock {
+  border: 15px solid #0074b6;
+}
+.scissors {
+  border: 15px solid #bd00ff;
+}
+.paper {
+  border: 15px solid #ffa943;
+}
 
 /* Rules */
 
