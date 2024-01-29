@@ -74,22 +74,46 @@ header {
 
 .main {
   position: relative;
-  height: 420px;
+  height: 400px;
 }
 
 .main-container {
   max-width: 840px;
 }
-
+/* choice-screen */
 .choice_screen {
   position: absolute;
   top: 5%;
   left: 50%;
+  transform: translateX(-50%); /* centered horizontally*/
+}
+
+.rock-scissors {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  gap: 7rem;
+  z-index: 1;
+}
+
+.two-lines {
+  display: flex;
+  position: absolute;
+  left: 50%;
   transform: translateX(-50%);
 }
 
+.paper-div {
+  /* Centered Vertically*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+}
+
 .select-option {
-  background-color: white;
+  background-color: #fff;
   width: 140px;
   height: 140px;
   border-radius: 50%;
@@ -104,6 +128,22 @@ header {
   background-color: #344007;
 }
 
+.upper-line {
+  position: absolute;
+  width: 160px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.left-line {
+  transform: rotate(60deg);
+}
+
+.right-line {
+  transform: rotate(-60deg);
+}
+
 .rock {
   border: 15px solid #0074b6;
 }
@@ -112,6 +152,47 @@ header {
 }
 .paper {
   border: 15px solid #ffa943;
+}
+
+/* result-screen */
+
+.result_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7rem;
+}
+
+.selected-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 6px;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.playAgain-btn {
+  background-color: #fff;
+  color: #6b6b6b;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 24px;
 }
 
 /* Rules */

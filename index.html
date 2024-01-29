@@ -28,21 +28,51 @@
     </header>
 
     <!-- Main Section -->
+
     <section class="main">
       <div class="main-container">
-        <div class="choice_screen">
-          <div class="select-option rock">
-            <img src="images/rock.png" alt="Rock" />
+        <div class="choice_screen" style="display: none">
+          <div class="rock-scissors">
+            <div class="select-option rock">
+              <img src="images/rock.png" alt="Rock" />
+            </div>
+            <div class="line upper-line"></div>
+            <div class="select-option scissors">
+              <img src="images/scissors.png" alt="scissors" />
+            </div>
           </div>
-          <div class="line"></div>
-          <div class="select-option scissors">
-            <img src="images/scissors.png" alt="scissors" />
+          <div class="two-lines">
+            <div class="line left-line"></div>
+            <div class="line right-line"></div>
           </div>
-          <div class="line"></div>
-          <div class="select-option paper">
-            <img src="images/paper.png" alt="paper" />
+          <div class="paper-div">
+            <div class="select-option paper">
+              <img src="images/paper.png" alt="paper" />
+            </div>
           </div>
-          <div class="line"></div>
+        </div>
+
+        <div class="result_box">
+          <div class="selected-option">
+            <p>YOU PICKED</p>
+            <div class="select-option">
+              <img src="images/scissors.png" alt="user" />
+            </div>
+          </div>
+          <div class="result">
+            <p>
+              YOU WIN
+              <br />
+              AGAINST PC
+            </p>
+            <button class="playAgain-btn">PLAY AGAIN</button>
+          </div>
+          <div class="selected-option">
+            <p>PC PICKED</p>
+            <div class="select-option">
+              <img src="images/paper.png" alt="computer" />
+            </div>
+          </div>
         </div>
       </div>
     </section>

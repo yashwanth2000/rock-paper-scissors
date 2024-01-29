@@ -79,6 +79,7 @@ a {
   font-weight: 600;
   letter-spacing: 1.5px;
   border-radius: 10px;
+  border: none;
 }
 
 /* Rules */
