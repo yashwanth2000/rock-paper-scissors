@@ -80,6 +80,7 @@ header {
 .main-container {
   max-width: 840px;
 }
+
 /* choice-screen */
 .choice_screen {
   position: absolute;
@@ -155,12 +156,19 @@ header {
 }
 
 /* result-screen */
-
+.result-screen {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
 .result_box {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 7rem;
+  gap: 18px;
+  padding-top: 60px;
 }
 
 .selected-option {
@@ -170,6 +178,7 @@ header {
   color: #fff;
   font-size: 18px;
   font-weight: 600;
+  gap: 25px;
 }
 
 .result {
@@ -180,7 +189,9 @@ header {
   color: #fff;
   letter-spacing: 6px;
   font-size: 24px;
-  font-weight: 900;
+  font-weight: 900; 
+  padding: 14px;
+  gap: 40px;
 }
 
 .playAgain-btn {
@@ -192,9 +203,46 @@ header {
   letter-spacing: 1.5px;
   border-radius: 10px;
   border: none;
-  margin-top: 24px;
 }
 
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  animation: pulse 1.5s linear infinite;
+  z-index: -1;
+}
+
+.innermost {
+  background-color: rgba(29, 168, 43, 0.9);
+  width: 200px;
+  height: 200px;
+}
+
+.inner {
+  background-color: rgba(29, 168, 43, 0.79);
+  width: 250px;
+  height: 250px;
+}
+
+.outer {
+  background-color: rgba(29, 168, 43, 0.5);
+  width: 300px;
+  height: 300px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
 /* Rules */
 
 .rules-container {
@@ -214,6 +262,16 @@ header {
   border: 2px solid white;
   border-radius: 10px;
   font-weight: 600;
+}
+
+.next-btn {
+  color: white;
+  background-color: transparent;
+  padding: 10px 30px;
+  border: 2px solid white;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-left: 20px;
 }
 
 .rule-box {
