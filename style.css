@@ -189,12 +189,12 @@ header {
   color: #fff;
   letter-spacing: 6px;
   font-size: 24px;
-  font-weight: 900; 
+  font-weight: 900;
   padding: 14px;
   gap: 40px;
 }
 
-.playAgain-btn {
+.playAgain {
   background-color: #fff;
   color: #6b6b6b;
   padding: 10px 20px;
@@ -204,7 +204,6 @@ header {
   border-radius: 10px;
   border: none;
 }
-
 
 .circle {
   position: absolute;

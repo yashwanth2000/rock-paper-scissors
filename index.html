@@ -31,13 +31,13 @@
 
     <section class="main">
       <div class="main-container">
-        <div class="choice_screen" style="display: none">
+        <div class="choice_screen">
           <div class="rock-scissors">
-            <div class="select-option rock">
+            <div class="select-option rock" id="rock">
               <img src="images/rock.png" alt="Rock" />
             </div>
             <div class="line upper-line"></div>
-            <div class="select-option scissors">
+            <div class="select-option scissors" id="scissors">
               <img src="images/scissors.png" alt="scissors" />
             </div>
           </div>
@@ -46,18 +46,22 @@
             <div class="line right-line"></div>
           </div>
           <div class="paper-div">
-            <div class="select-option paper">
+            <div class="select-option paper" id="paper">
               <img src="images/paper.png" alt="paper" />
             </div>
           </div>
         </div>
 
-        <div class="result-screen">
+        <div class="result-screen" style="display: none">
           <div class="result_box">
-            <div class="selected-option">
+            <div class="selected-option" id="user">
               <p>YOU PICKED</p>
               <div class="select-option">
-                <img src="images/scissors.png" alt="user" />
+                <img
+                  src="images/scissors.png"
+                  alt="user"
+                  id="userChoiceImage"
+                />
                 <div class="circle outer"></div>
                 <div class="circle inner"></div>
                 <div class="circle innermost"></div>
@@ -70,15 +74,19 @@
                 <br />
                 AGAINST PC
               </p>
-              <button class="playAgain-btn">PLAY AGAIN</button>
+              <button class="playAgain">PLAY AGAIN</button>
             </div>
-            <div class="selected-option">
+            <div class="selected-option" id="computer">
               <p>PC PICKED</p>
               <div class="select-option">
-                <img src="images/paper.png" alt="computer" />
-                  <div class="circle outer"></div>
-                  <div class="circle inner"></div>
-                  <div class="circle innermost"></div>
+                <img
+                  src="images/paper.png"
+                  alt="computer"
+                  id="computerChoiceImage"
+                />
+                <div class="circle outer"></div>
+                <div class="circle inner"></div>
+                <div class="circle innermost"></div>
               </div>
             </div>
           </div>
@@ -87,11 +95,11 @@
     </section>
 
     <!-- Rules -->
-    <div class="rules-container">
+    <div class="rules-container" style="display: none">
       <button class="rule_btn">RULES</button>
-      <a href="winner.html" class="next-btn">NEXT</a>
+      <!-- <a href="winner.html" class="next-btn">NEXT</a> -->
     </div>
-    <div class="rule-box">
+    <div class="rule-box" style="display: none">
       <div class="rule-header">
         <p>GAME RULES</p>
       </div>
