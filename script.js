@@ -13,11 +13,13 @@ const userChoiceImg = document.querySelector("#userChoiceImage");
 const computerChoiceImg = document.querySelector("#computerChoiceImage");
 const userScore = document.querySelector("#user-score");
 const computerScore = document.querySelector("#computer-score");
+const nextBtn = document.querySelector("#next-btn");
+const winner = document.querySelector(".win");
 
 // Variables
 let userChoice;
 let computerChoice;
-localStorage.clear();
+//localStorage.clear();
 let userScoreValue = parseInt(localStorage.getItem("userScoreValue")) || 0;
 let computerScoreValue =
   parseInt(localStorage.getItem("computerScoreValue")) || 0;
@@ -49,9 +51,26 @@ const updateBorderColor = (element, choice) => {
 const updateScore = (scoreElement, scoreKey) => {
   let player = parseInt(localStorage.getItem(scoreKey)) || 0;
   player++;
-  console.log(player);
   scoreElement.textContent = player;
   localStorage.setItem(scoreKey, player.toString());
+};
+
+const userWins = () => {
+  nextBtn.style.display = "flex";
+  winner.textContent = "YOU WIN";
+  playAgain.textContent = "PLAY AGAIN";
+};
+
+const tieUp = () => {
+  nextBtn.style.display = "none";
+  winner.textContent = "TIE UP";
+  playAgain.textContent = "REPLAY";
+};
+
+const computerWins = () => {
+  nextBtn.style.display = "none";
+  winner.textContent = "YOU LOST";
+  playAgain.textContent = "PLAY AGAIN";
 };
 
 rock.addEventListener("click", () => {
@@ -63,13 +82,13 @@ rock.addEventListener("click", () => {
   showResultScreen();
 
   if (userChoice === "rock" && computerChoice == "scissors") {
-    // console.log('user');
     updateScore(userScore, "userScoreValue");
+    userWins();
   } else if (userChoice === computerChoice) {
-    // console.log('tie');
+    tieUp();
   } else {
-    // console.log('pc wins');
     updateScore(computerScore, "computerScoreValue");
+    computerWins();
   }
 });
 
@@ -82,16 +101,13 @@ scissors.addEventListener("click", () => {
   showResultScreen();
 
   if (userChoice === "scissors" && computerChoice == "paper") {
-    // console.log('user wins');
     updateScore(userScore, "userScoreValue");
+    userWins();
   } else if (userChoice === computerChoice) {
-    // console.log('tie');
+    tieUp();
   } else {
-    // console.log('pc wins');
-    computerScoreValue++;
-    console.log(computerScoreValue);
-    computerScore.textContent = computerScoreValue;
-    localStorage.setItem("computerScoreValue", `${computerScoreValue}`);
+    updateScore(computerScore, "computerScoreValue");
+    computerWins();
   }
 });
 
@@ -104,19 +120,20 @@ paper.addEventListener("click", () => {
   showResultScreen();
 
   if (userChoice === "paper" && computerChoice == "rock") {
-    // console.log('user wins');
     updateScore(userScore, "userScoreValue");
+    userWins();
   } else if (userChoice === computerChoice) {
-    // console.log('tie');
+    tieUp();
   } else {
-    // console.log('pc wins');
     updateScore(computerScore, "computerScoreValue");
+    computerWins();
   }
 });
 
 playAgain.addEventListener("click", () => {
   choiceScreen.style.display = "block";
   resultScreen.style.display = "none";
+  nextBtn.style.display = "none";
 });
 
 // Rules

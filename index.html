@@ -17,11 +17,11 @@
         <div class="score">
           <div class="score-card">
             <p>YOUR SCORE</p>
-            <p id="user-score">0</p>
+            <p id="user-score"></p>
           </div>
           <div class="score-card">
             <p>COMPUTER SCORE</p>
-            <p id="computer-score">0</p>
+            <p id="computer-score"></p>
           </div>
         </div>
       </div>
@@ -70,7 +70,7 @@
 
             <div class="result">
               <p>
-                YOU WIN
+                <span class="win">YOU WIN</span>
                 <br />
                 AGAINST PC
               </p>
@@ -95,11 +95,11 @@
     </section>
 
     <!-- Rules -->
-    <div class="rules-container" style="display: none">
+    <div class="rules-container" >
       <button class="rule_btn">RULES</button>
-      <!-- <a href="winner.html" class="next-btn">NEXT</a> -->
+      <a href="winner.html" class="rule_btn" id="next-btn">NEXT</a>
     </div>
-    <div class="rule-box" style="display: none">
+    <div class="rule-box" >
       <div class="rule-header">
         <p>GAME RULES</p>
       </div>

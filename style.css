@@ -170,7 +170,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 7rem;
-  gap: 18px;
+  gap: 50px;
   padding-top: 60px;
 }
 
@@ -197,6 +197,7 @@ header {
   gap: 40px;
 }
 
+
 .playAgain {
   background-color: #fff;
   color: #6b6b6b;
@@ -206,6 +207,11 @@ header {
   letter-spacing: 1.5px;
   border-radius: 10px;
   border: none;
+}
+
+.win{
+  font-size: 30px;
+  font-weight: 900;
 }
 
 .circle {
@@ -266,16 +272,10 @@ header {
   font-weight: 600;
 }
 
-.next-btn {
-  color: white;
-  background-color: transparent;
-  padding: 10px 30px;
-  border: 2px solid white;
-  border-radius: 10px;
-  font-weight: 600;
-  margin-left: 20px;
+#next-btn{
+  display: none;
+  margin-left: 10px;
 }
-
 .rule-box {
   display: block;
   position: fixed;
