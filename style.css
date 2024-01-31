@@ -147,12 +147,15 @@ header {
 
 .rock {
   border: 15px solid #0074b6;
+  /* border-radius: 50%; */
 }
 .scissors {
   border: 15px solid #bd00ff;
+  /* border-radius: 50%; */
 }
 .paper {
   border: 15px solid #ffa943;
+  /* border-radius: 50%; */
 }
 
 /* result-screen */

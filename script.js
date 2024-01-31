@@ -11,9 +11,19 @@ const user = document.querySelector("#user");
 const computer = document.querySelector("#computer");
 const userChoiceImg = document.querySelector("#userChoiceImage");
 const computerChoiceImg = document.querySelector("#computerChoiceImage");
+const userScore = document.querySelector("#user-score");
+const computerScore = document.querySelector("#computer-score");
 
 // Variables
+let userChoice;
 let computerChoice;
+localStorage.clear();
+let userScoreValue = parseInt(localStorage.getItem("userScoreValue")) || 0;
+let computerScoreValue =
+  parseInt(localStorage.getItem("computerScoreValue")) || 0;
+
+userScore.textContent = userScoreValue;
+computerScore.textContent = computerScoreValue;
 
 const showResultScreen = () => {
   choiceScreen.style.display = "none";
@@ -21,32 +31,87 @@ const showResultScreen = () => {
 };
 
 const randomComputerChoiceImg = () => {
-  computerChoice = randomComputerChoice();
-  computerChoiceImg.src = `images/${computerChoice}.png`;
-};
-
-const randomComputerChoice = () => {
   const choices = ["rock", "paper", "scissors"];
   const randomIndex = Math.floor(Math.random() * choices.length);
-  return choices[randomIndex];
+  const computerChoice = choices[randomIndex];
+
+  computerChoiceImg.src = `images/${computerChoice}.png`;
+  return computerChoice;
+};
+
+const updateBorderColor = (element, choice) => {
+  // Remove existing classes
+  element.classList.remove("rock", "scissors", "paper");
+
+  element.classList.add(choice);
+};
+
+const updateScore = (scoreElement, scoreKey) => {
+  let player = parseInt(localStorage.getItem(scoreKey)) || 0;
+  player++;
+  console.log(player);
+  scoreElement.textContent = player;
+  localStorage.setItem(scoreKey, player.toString());
 };
 
 rock.addEventListener("click", () => {
+  userChoice = "rock";
   userChoiceImg.src = "images/rock.png";
-  randomComputerChoiceImg();
+  computerChoice = randomComputerChoiceImg();
+  updateBorderColor(user.querySelector(".select-option"), userChoice);
+  updateBorderColor(computer.querySelector(".select-option"), computerChoice);
   showResultScreen();
+
+  if (userChoice === "rock" && computerChoice == "scissors") {
+    // console.log('user');
+    updateScore(userScore, "userScoreValue");
+  } else if (userChoice === computerChoice) {
+    // console.log('tie');
+  } else {
+    // console.log('pc wins');
+    updateScore(computerScore, "computerScoreValue");
+  }
 });
 
 scissors.addEventListener("click", () => {
+  userChoice = "scissors";
   userChoiceImg.src = "images/scissors.png";
-  randomComputerChoiceImg();
+  computerChoice = randomComputerChoiceImg();
+  updateBorderColor(user.querySelector(".select-option"), userChoice);
+  updateBorderColor(computer.querySelector(".select-option"), computerChoice);
   showResultScreen();
+
+  if (userChoice === "scissors" && computerChoice == "paper") {
+    // console.log('user wins');
+    updateScore(userScore, "userScoreValue");
+  } else if (userChoice === computerChoice) {
+    // console.log('tie');
+  } else {
+    // console.log('pc wins');
+    computerScoreValue++;
+    console.log(computerScoreValue);
+    computerScore.textContent = computerScoreValue;
+    localStorage.setItem("computerScoreValue", `${computerScoreValue}`);
+  }
 });
 
 paper.addEventListener("click", () => {
+  userChoice = "paper";
   userChoiceImg.src = "images/paper.png";
-  randomComputerChoiceImg();
+  computerChoice = randomComputerChoiceImg();
+  updateBorderColor(user.querySelector(".select-option"), userChoice);
+  updateBorderColor(computer.querySelector(".select-option"), computerChoice);
   showResultScreen();
+
+  if (userChoice === "paper" && computerChoice == "rock") {
+    // console.log('user wins');
+    updateScore(userScore, "userScoreValue");
+  } else if (userChoice === computerChoice) {
+    // console.log('tie');
+  } else {
+    // console.log('pc wins');
+    updateScore(computerScore, "computerScoreValue");
+  }
 });
 
 playAgain.addEventListener("click", () => {
