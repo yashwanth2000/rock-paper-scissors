@@ -15,13 +15,12 @@ const userScore = document.querySelector("#user-score");
 const computerScore = document.querySelector("#computer-score");
 const nextBtn = document.querySelector("#next-btn");
 const winner = document.querySelector(".win");
-const userWinIndicator = document.querySelector('#userWins')
-const computerWinIndicator = document.querySelector('#computerWins')
+const userWinIndicator = document.querySelector("#userWins");
+const computerWinIndicator = document.querySelector("#computerWins");
 
 // Variables
 let userChoice;
 let computerChoice;
-//localStorage.clear();
 let userScoreValue = parseInt(localStorage.getItem("userScoreValue")) || 0;
 let computerScoreValue =
   parseInt(localStorage.getItem("computerScoreValue")) || 0;
@@ -59,24 +58,24 @@ const userWins = () => {
   nextBtn.style.display = "flex";
   winner.textContent = "YOU WIN";
   playAgain.textContent = "PLAY AGAIN";
-  userWinIndicator.style.display = 'flex'
-  computerWinIndicator.style.display = 'none'
+  userWinIndicator.style.display = "flex";
+  computerWinIndicator.style.display = "none";
 };
 
 const tieUp = () => {
   nextBtn.style.display = "none";
   winner.textContent = "TIE UP";
   playAgain.textContent = "REPLAY";
-  userWinIndicator.style.display = 'none'
-  computerWinIndicator.style.display = 'none'
+  userWinIndicator.style.display = "none";
+  computerWinIndicator.style.display = "none";
 };
 
 const computerWins = () => {
   nextBtn.style.display = "none";
   winner.textContent = "YOU LOST";
   playAgain.textContent = "PLAY AGAIN";
-  userWinIndicator.style.display = 'none'
-  computerWinIndicator.style.display = 'flex'
+  userWinIndicator.style.display = "none";
+  computerWinIndicator.style.display = "flex";
 };
 
 //rock

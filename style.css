@@ -147,15 +147,12 @@ header {
 
 .rock {
   border: 15px solid #0074b6;
-  /* border-radius: 50%; */
 }
 .scissors {
   border: 15px solid #bd00ff;
-  /* border-radius: 50%; */
 }
 .paper {
   border: 15px solid #ffa943;
-  /* border-radius: 50%; */
 }
 
 /* result-screen */
@@ -226,7 +223,7 @@ header {
 
 #userWins,
 #computerWins{
-  animation: pulse 1.5s linear infinite;
+  animation: pulse 2s linear infinite;
 }
 
 @keyframes pulse {
@@ -286,7 +283,7 @@ header {
 }
 
 .rule-content {
-  font-size: 14px;
+  font-size: 13px;
   padding-right: 20px;
   padding-bottom: 20px;
 }
