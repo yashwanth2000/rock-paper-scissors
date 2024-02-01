@@ -161,7 +161,7 @@ header {
 /* result-screen */
 .result-screen {
   position: absolute;
-  top: 5%;
+  top: 20%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -217,26 +217,16 @@ header {
 .circle {
   position: absolute;
   border-radius: 50%;
-  animation: pulse 1.5s linear infinite;
+  display: none;
   z-index: -1;
-}
-
-.innermost {
-  background-color: rgba(29, 168, 43, 0.9);
-  width: 200px;
-  height: 200px;
-}
-
-.inner {
-  background-color: rgba(29, 168, 43, 0.79);
-  width: 250px;
-  height: 250px;
-}
-
-.outer {
-  background-color: rgba(29, 168, 43, 0.5);
+  background-color:  rgba(29, 168, 43, 0.9);
   width: 300px;
   height: 300px;
+}
+
+#userWins,
+#computerWins{
+  animation: pulse 1.5s linear infinite;
 }
 
 @keyframes pulse {

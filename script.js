@@ -15,6 +15,8 @@ const userScore = document.querySelector("#user-score");
 const computerScore = document.querySelector("#computer-score");
 const nextBtn = document.querySelector("#next-btn");
 const winner = document.querySelector(".win");
+const userWinIndicator = document.querySelector('#userWins')
+const computerWinIndicator = document.querySelector('#computerWins')
 
 // Variables
 let userChoice;
@@ -42,9 +44,7 @@ const randomComputerChoiceImg = () => {
 };
 
 const updateBorderColor = (element, choice) => {
-  // Remove existing classes
   element.classList.remove("rock", "scissors", "paper");
-
   element.classList.add(choice);
 };
 
@@ -59,20 +59,27 @@ const userWins = () => {
   nextBtn.style.display = "flex";
   winner.textContent = "YOU WIN";
   playAgain.textContent = "PLAY AGAIN";
+  userWinIndicator.style.display = 'flex'
+  computerWinIndicator.style.display = 'none'
 };
 
 const tieUp = () => {
   nextBtn.style.display = "none";
   winner.textContent = "TIE UP";
   playAgain.textContent = "REPLAY";
+  userWinIndicator.style.display = 'none'
+  computerWinIndicator.style.display = 'none'
 };
 
 const computerWins = () => {
   nextBtn.style.display = "none";
   winner.textContent = "YOU LOST";
   playAgain.textContent = "PLAY AGAIN";
+  userWinIndicator.style.display = 'none'
+  computerWinIndicator.style.display = 'flex'
 };
 
+//rock
 rock.addEventListener("click", () => {
   userChoice = "rock";
   userChoiceImg.src = "images/rock.png";
@@ -92,6 +99,7 @@ rock.addEventListener("click", () => {
   }
 });
 
+//scissors
 scissors.addEventListener("click", () => {
   userChoice = "scissors";
   userChoiceImg.src = "images/scissors.png";
@@ -111,6 +119,7 @@ scissors.addEventListener("click", () => {
   }
 });
 
+//paper
 paper.addEventListener("click", () => {
   userChoice = "paper";
   userChoiceImg.src = "images/paper.png";
